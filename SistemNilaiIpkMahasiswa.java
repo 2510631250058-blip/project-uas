@@ -146,4 +146,33 @@ public class SistemNilaiIpkMahasiswa {
         }
         System.out.println("Data tidak ditemukan");
     }
+    static void cariKategori(){
+        System.out.print("Masukkan kategori nilai (A/B/C): ");
+        String kategori = input.nextLine();
+        boolen ditemukan = false;
+
+        System.out.println("\nMahasiswa dengan kategori " + kategori.toUppercase() + ":");
+        for (Mahasiswa m : data) {
+            if (m.kategori.equalsIgnorecase (kategori) && m.status.equals("aktif")) {
+                System.out.println("- " + m.nama + " (" + m.ipk + ")");
+                ditemukan = true;
+            }
+        }
+        if (!ditemukan) {
+            System.out.println("Tidak ada mahasiswa dalam kategori tersebut.");
+        }
+    }
+
+    static void bubbleSortNPM() {
+        for (int = 0, i < data.size(); i++) {
+            for (int j = 0; j < data.size() - 1 - i; j++) {
+                if(data.get(j).npm.compareTo(data.get(j + 1).npm) > 0) {
+                    Mahasiswa temp = data.get(j);
+                    data.set(j, data.get(j + 1));
+                    data.set(j + 1, temp);
+                }
+            }
+        }
+        System.out.println("Data berhasil diurutkan berdasarkan NPM.");
+    }
 }
