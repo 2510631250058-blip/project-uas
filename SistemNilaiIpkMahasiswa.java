@@ -38,3 +38,26 @@ public class SistemNilaiIpkMahasiswa {
         data.add(new Mahasiswa("250101029", "Abdul", 3.8));
         data.add(new Mahasiswa("250101030", "Yana", 3.1));
 }
+    // Tambahankan Data
+    static void tambahData() {
+        System.out.print("NPM: ");
+        String npm = input.nextLine();
+        System.out.print("Nama Lengkap: ");
+        String nama = input.nextLine(); 
+        System.out.print("IPK: ");
+        double ipk = input.nextDouble();
+        input,nextLine();
+
+        data.add(new Mahasiswa(npm, nama, ipk));
+        System.out.println("Data berhasil ditambahkan\n");
+    }
+
+    // Tampilkan Data
+    static void tampilData(){
+        System.out.println("\n=== DATA MAHASISWA  ===");
+        for (Mahasiswa m : data){
+            if (m.status.equals("aktif")) {
+                System.out.println(m.npm + " | " + m.nama + " | " + m.ipk + " | " + m.kategori);
+            }
+        }
+    }
