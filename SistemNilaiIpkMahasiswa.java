@@ -46,7 +46,7 @@ public class SistemNilaiIpkMahasiswa {
         String nama = input.nextLine(); 
         System.out.print("IPK: ");
         double ipk = input.nextDouble();
-        input,nextLine();
+        input.nextLine();
 
         data.add(new Mahasiswa(npm, nama, ipk));
         System.out.println("Data berhasil ditambahkan\n");
@@ -61,3 +61,41 @@ public class SistemNilaiIpkMahasiswa {
             }
         }
     }
+    
+   static void editData() {
+        System.out.printl("Masukkan NPM");
+        String npm = input.nextLine();
+
+        for (Mahasiswa m : data) {
+            if (m.npm.equals(npm)) && m .status.equals("aktif") {
+                System.out.print("Nama Lengkap baru: ");
+                m.nama = input.nextLine();
+                System.out.print("IPK baru: ");
+                m.ipk = input.nextDouble();
+                input.nextLine();
+
+                if (m.ipk >= 3.7) m.kategori = "A";
+                else if (m.ipk >= 3.0) m.kategori = "B";
+                else m.kategori = "C";
+                
+                System.out.println("Data berhasil diupdate\n");
+                return;
+                
+            }
+        }
+        System.out.println("Data tidak ditemukan\n");
+   }
+    static void hapusData() {
+        System.out.print("Masukkan NPM: ");
+        String npm = input.nextLine();
+
+        for (Mahasiswa m : data) {
+            if (m.npm.equals(npm) && m.status.equals("aktif")) {
+                m.status = "nonaktif";
+                System.out.println("Data berhasil dihapus\n");
+                return;
+            }
+        }
+        System.out.println("Data tidak ditemukan\n");
+    }
+    
