@@ -61,7 +61,7 @@ public class SistemNilaiIpkMahasiswa {
             }
         }
     }
-    
+    // Edit Data
    static void editData() {
         System.out.printl("Masukkan NPM");
         String npm = input.nextLine();
@@ -85,6 +85,7 @@ public class SistemNilaiIpkMahasiswa {
         }
         System.out.println("Data tidak ditemukan\n");
    }
+   // Hapus Data
     static void hapusData() {
         System.out.print("Masukkan NPM: ");
         String npm = input.nextLine();
@@ -97,5 +98,23 @@ public class SistemNilaiIpkMahasiswa {
             }
         }
         System.out.println("Data tidak ditemukan\n");
+    }
+    
+
+//Searching 
+    static void cariNama() {
+        System.out.print("Masukkan Nama Lengkap");
+        String Nama = input.nextline();
+        boolean ditemukan = false;
+
+        for (Mahasiswa m : data) {
+            if (m.nama.equalsIgnoresCase(nama) && m.status.equals("aktif")) {
+                System.out.println("Data ditemukan: " + m.npm + " | " + m.nama + "|" + m.ipk " | " + m.kategori);
+                ditemukan = true;
+            }
+        }
+        if (!ditemukan) {
+            System.out.println("Data tidak ditemukan");
+        }
     }
     
