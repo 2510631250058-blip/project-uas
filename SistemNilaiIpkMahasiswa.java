@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class SistemNilaiIpkMahasiswa {
 
@@ -37,7 +38,7 @@ public class SistemNilaiIpkMahasiswa {
         data.add(new Mahasiswa("250101028", "Bagas", 2.7));
         data.add(new Mahasiswa("250101029", "Abdul", 3.8));
         data.add(new Mahasiswa("250101030", "Yana", 3.1));
-}
+    }
     // Tambahankan Data
     static void tambahData() {
         System.out.print("NPM: ");
@@ -101,7 +102,7 @@ public class SistemNilaiIpkMahasiswa {
     }
     
 
-//Searching 
+    //Searching 
     static void cariNama() {
         System.out.print("Masukkan Nama Lengkap");
         String Nama = input.nextline();
@@ -146,6 +147,7 @@ public class SistemNilaiIpkMahasiswa {
         }
         System.out.println("Data tidak ditemukan");
     }
+    
     static void cariKategori(){
         System.out.print("Masukkan kategori nilai (A/B/C): ");
         String kategori = input.nextLine();
@@ -164,7 +166,7 @@ public class SistemNilaiIpkMahasiswa {
     }
 
     static void bubbleSortNPM() {
-        for (int = 0, i < data.size(); i++) {
+        for (int i = 0; i < data.size(); i++) {
             for (int j = 0; j < data.size() - 1 - i; j++) {
                 if(data.get(j).npm.compareTo(data.get(j + 1).npm) > 0) {
                     Mahasiswa temp = data.get(j);
@@ -175,4 +177,33 @@ public class SistemNilaiIpkMahasiswa {
         }
         System.out.println("Data berhasil diurutkan berdasarkan NPM.");
     }
+
+    static void selectionSortNama() {
+        for (int i = 0; i < data.size(); i++) {
+            int min = i;
+            for (int j = i + 1; j < data.size(); j++) {
+                if (data.get(j).nama.compareTo(data.get(min).nama) < 0) {
+                    min = j;
+                }
+            }
+            Mahasiswa temp = data.get(i);
+            data.set(i, data.get(min));
+            data.set(min, temp);
+        }
+        System.out.println("Data berhasil diurutkan berdasarkan nama");
+    }
+   
+    static void sortIPK() {
+        for( int i = 0; i < data.size(); i++){
+            for (int j = 0; j < data.size() - i - 1; j++) {
+                if (data.get (j + 1).ipk > data.get (j).ipk) {
+                Mahasiswa temp = data.get (j);
+                data.set(j, data.get (j + 1));
+                data.set(j + 1, temp);
+                }
+            }
+        }
+        System.out.println("Data berhasil diurutkan berdasarkan IPK tertinggi");
+    }
 }
+      
