@@ -117,4 +117,33 @@ public class SistemNilaiIpkMahasiswa {
             System.out.println("Data tidak ditemukan");
         }
     }
-    
+
+    static void binarySearchNPM() {
+        bubbleSortNPM();
+
+        System.out.print("Masukkan NPM: ");
+        String cari = input.nextline();
+
+        int low = 0;
+        int high = data.size() - 1;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            int cmp = data.get(mid).npm.compareTo(cari);
+
+            if (cmp == 0) {
+                if (data.get(mid).status.equals("Aktif")) {
+                    System.out.println("Data ditemukan: " + data.get(mid).nama + " (" + data.get(mid).ipk + ")");
+                } else {
+                    System.out.println("Data ditemukan tetapi berstatus nonaktif");
+                }
+                return;
+            } else if (cmp < 0) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        System.out.println("Data tidak ditemukan");
+    }
+}
