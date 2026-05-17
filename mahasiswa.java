@@ -1,21 +1,19 @@
-public class mahasiswa {
-    public string npm;
-    public string nama;
-    public double ipk;
-    public string kategori;
-    public string status;
+class Mahasiswa {
+    String npm;
+    String nama;
+    double ipk;
+    String kategori;
+    String status;
 
-    public mahasiswa(string npm, string nama, double ipk, string kategori, string status) {
+    Mahasiswa(String npm, String nama, double ipk) {
         this.npm = npm;
         this.nama = nama;
         this.ipk = ipk;
-        this.kategori = kategori;
         this.status = "aktif";
 
-        //kategori ipk
+        // Penentuan kategori berdasarkan IPK
         if (ipk >= 3.7) kategori = "A";
         else if (ipk >= 3.0) kategori = "B";
         else kategori = "C";
     }
-    
 }
