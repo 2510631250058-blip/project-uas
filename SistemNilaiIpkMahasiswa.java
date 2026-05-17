@@ -165,6 +165,7 @@ public class SistemNilaiIpkMahasiswa {
         }
     }
 
+    //sorting
     static void bubbleSortNPM() {
         for (int i = 0; i < data.size(); i++) {
             for (int j = 0; j < data.size() - 1 - i; j++) {
@@ -176,6 +177,7 @@ public class SistemNilaiIpkMahasiswa {
             }
         }
         System.out.println("Data berhasil diurutkan berdasarkan NPM.");
+        tampilData();
     }
 
     static void selectionSortNama() {
@@ -191,6 +193,7 @@ public class SistemNilaiIpkMahasiswa {
             data.set(min, temp);
         }
         System.out.println("Data berhasil diurutkan berdasarkan nama");
+        tampilData();
     }
    
     static void sortIPK() {
@@ -204,6 +207,7 @@ public class SistemNilaiIpkMahasiswa {
             }
         }
         System.out.println("Data berhasil diurutkan berdasarkan IPK tertinggi");
+        tampilData();
     }
 }
       
