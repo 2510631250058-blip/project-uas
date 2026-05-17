@@ -13,14 +13,35 @@ public static void main(String[] args) {
         System.out.println("8. Urutkan Data berdasarkan Nama");
         System.out.println("9. Urutkan Data berdasarkan NPM");
         System.out.println("10. Urutkan Data berdasarkan IPK");
-        System.out.println("11. Statistik");
-        System.oiut.println("12. Keluar");
-        System.out.println("Pilih menu (1-12):");
+        System.out.println("11. Keluar");
+        System.out.println("Pilih menu (1-11):");
 
         int pilih = input.nextInt();
-            input.nextLine(); 
+        input.nextLine(); 
 
-
+        switch (pilih) {
+            case 1 -> tambahData();
+            case 2 -> tampilData();
+            case 3 -> editData();
+            case 4 -> hapusData();
+            case 5 -> cariNama();
+            case 6 -> binarySearchNPM();
+            case 7 -> cariKategori();
+            case 8 -> bubbleSortNPM();
+            case 9 -> selectionSortNama();
+            case 10 -> sortIPK();
+            case 11 -> {
+                System.out.println("Program selesai.");
+                return;
+            }
+            default -> System.out.println("Pilihan tidak valid!");
+        }
+       
     }
-    
 }
+
+
+
+
+
+    
