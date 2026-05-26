@@ -35,5 +35,3 @@ Catatan Penggunaan:
    Anda juga bisa menggunakan menu "12" untuk menyimpan kapan saja.
 3. Input: Pastikan memasukkan tipe data yang sesuai pada setiap menu 
    (misalnya memasukkan angka pada menu pilihan) agar program berjalan lancar.
-
-================================================================
