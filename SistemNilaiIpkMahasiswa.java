@@ -31,7 +31,7 @@ class Mahasiswa {
     }
 }
 
-public class  SistemNilaiIPKMahasiswa{
+public class  SistemNilaiIpkMahasiswa{
 
     static ArrayList<Mahasiswa> data = new ArrayList<>();
     static Scanner input = new Scanner(System.in);
